@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<head>
+  <title>OpenAI Quickstart</title>
+  <link
+    rel="shortcut icon"
+    href="{{ url_for('static', filename='dog.png') }}"
+  />
+  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
+</head>
+
+<body>
+  <img src="{{ url_for('static', filename='Jarvis.png') }}" class="Main_Icon" />
+  <h3>Enter what you want to know</h3>
+  <form action="/respond" method="post">
+    <!--<input type="text" name="Your Question" placeholder="Enter a Question" required />-->
+    <input type="submit" name="submit" value="Speak the Message"/>
+    <br>
+    <br>
+    <input type="submit" name="submit" value="Return to Main Page"/>
+    {% if result %}
+    <div class="result" name="result">
+      <br>
+      {{ result }}
+      <br>
+    </div>
+    {% endif %}
+  </form>
+</body>
